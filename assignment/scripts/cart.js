@@ -4,7 +4,7 @@ console.log('***** Cart Functions *****');
 
 // Create a global variable named basket and set it to an empty array.
 let basket = [];
-console.log('created empty basket');
+console.log(`Basket is ${basket}`);
 
 //Create a function called addItem. It should:
 function addItem( string ){ //take an input parameter for a string item
@@ -12,6 +12,15 @@ function addItem( string ){ //take an input parameter for a string item
   basket.push(string); //add the new item to the global array basket.
   return true; //return true indicating the item was added
 }
+
+console.log('adding iPad - should say true', addItem('iPad'));
+console.log(`Basket is now: ${basket}`);
+console.log('adding cable - should say true', addItem('cable'));
+console.log(`Basket is now: ${basket}`);
+console.log('adding iHome - should say true', addItem('iHome'));
+console.log(`Basket is now: ${basket}`);
+console.log('adding airPods - should say true', addItem('airPods'));
+console.log(`Basket is now: ${basket}`);
 
 //Create a function called listItems. It should:
 function listItems( array ){
@@ -26,7 +35,9 @@ function listItems( array ){
 function empty( array ){
   console.log('in empty');
   for (let i = array.length-1; i >= 0; i--){
-    array.shift();
+    console.log(`removed: ${array.shift()}`);
+
   }
   return array; // reset the basket to an empty array
 }
+console.log(`Basket is now: ${basket}`);
