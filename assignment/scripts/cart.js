@@ -41,3 +41,26 @@ function empty( array ){
   return array; // reset the basket to an empty array
 }
 console.log(`Basket is now: ${basket}`);
+
+/* Stretch Goals
+Remember that Stretch Goals are not required, but will help you to further develop concepts from the skills we have covered.
+
+Using functions in other functions!
+
+Add a global const named maxItems and set it to 5.
+
+Create a function called isFull(). It should:
+
+return false if the basket contains less than max number of items
+return true otherwise (equal or more than maxItems)
+Update the required addItem function to:
+Use the isFull function to prevent more than maxItems from being added to the basket.
+If an item was added to the array, return true
+If there was no room and the item could not be added return false
+Using Array built-in functions!
+
+Create a function called removeItem. It should:
+Take an input parameter for a string item
+Use Array.indexOf to find the index of the first matching item in the basket.
+Use Array.splice to remove the first matching item from the basket.
+Return the item removed or null if the item was not found */
