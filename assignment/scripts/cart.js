@@ -50,12 +50,18 @@ Using functions in other functions!*/
 const maxItems = 5;
 //Create a function called isFull(). It should:
 function isFull( array ) {
+  console.log('in isFull');
   if(array.length < maxItems){
+    console.log(`${array} has room`);
     return false;
   } //return false if the basket contains less than max number of items
+  console.log(`${array} is full`);
   return true; //return true otherwise (equal or more than maxItems)
 } //end isFull
-
+console.log('testing isfull, should say false', isFull(basket));
+console.log('adding MBP - should say true', addItem('MBP'));
+console.log(`Basket is now: ${basket}`);
+console.log('testing isfull, should say true', isFull(basket));
 
 //Update the required addItem function to:
   //Use the isFull function to prevent more than maxItems from being added to the basket.
