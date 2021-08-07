@@ -83,7 +83,13 @@ console.log('testing isFull, adding keyboard, should say false', addItem('keyboa
 // Using Array built-in functions!
 
 //Create a function called removeItem. It should:
-  //Take an input parameter for a string item
-  //Use Array.indexOf to find the index of the first matching item in the basket.
-  //Use Array.splice to remove the first matching item from the basket.
-  //Return the item removed or null if the item was not found */
+function removeItem( string ) { //Take an input parameter for a string item
+  if (basket.indexOf(string) !== -1){
+    let x = basket.indexOf(string);//Use Array.indexOf to find the index of the first matching item in the basket.
+    return basket.splice(x, 1); //Use Array.splice to remove the first matching item from the basket.
+  }
+  return null; //Return the item removed or null if the item was not found
+} // emd removeItem
+
+console.log('test - removing MBP', removeItem('MBP'));
+console.log('test - basket should not change, return null', removeItem('mouse'));
