@@ -5,17 +5,32 @@ console.log('***** Cart Functions *****');
 // Create a global variable named basket and set it to an empty array.
 let basket = [];
 console.log(`Basket is ${basket}`);
+const maxItems = 5;
+console.log(`Basket capacity is ${maxItems}`); //from stretch goals
+
+function isFull( array ) {
+  console.log('in isFull');
+  if(array.length < maxItems){
+    console.log(`${array} has room`);
+    return false;
+  } //return false if the basket contains less than max number of items
+  console.log(`${array} is full`);
+  return true; //return true otherwise (equal or more than maxItems)
+} //end isFull
 
 //Create a function called addItem. It should:
 function addItem( string ){ //take an input parameter for a string item
   // EDIT Adding conditions for stretch goal
   console.log('in addItem');
-  if (isFull(basket) === false) {
+  if (isFull(basket)){
+    return false;
+  }
+  else {
     basket.push(string); //add the new item to the global array basket.
     return true; //return true indicating the item was added
   }
-  return false;
 }
+
 
 console.log('adding iPad - should say true', addItem('iPad'));
 console.log(`Basket is now: ${basket}`);
@@ -51,26 +66,19 @@ Remember that Stretch Goals are not required, but will help you to further devel
 Using functions in other functions!*/
 
 //Add a global const named maxItems and set it to 5.
-const maxItems = 5;
+ /* see top of code */
 //Create a function called isFull(). It should:
-function isFull( array ) {
-  console.log('in isFull');
-  if(array.length < maxItems){
-    console.log(`${array} has room`);
-    return false;
-  } //return false if the basket contains less than max number of items
-  console.log(`${array} is full`);
-  return true; //return true otherwise (equal or more than maxItems)
-} //end isFull
-console.log('testing isfull, should say false', isFull(basket));
-console.log('adding MBP - should say true', addItem('MBP'));
-console.log(`Basket is now: ${basket}`);
-console.log('testing isfull, should say true', isFull(basket));
+/*see line 11*/
 
 //Update the required addItem function to:
   //Use the isFull function to prevent more than maxItems from being added to the basket.
   //If an item was added to the array, return true
   //If there was no room and the item could not be added return false
+console.log('testing isfull, should say false', isFull(basket));
+console.log('adding MBP - should say true', addItem('MBP'));
+console.log(`Basket is now: ${basket}`);
+console.log('testing isfull, should say true', isFull(basket));
+console.log('testing isFull, adding keyboard, should say false', addItem('keyboard'));
 
 // Using Array built-in functions!
 
