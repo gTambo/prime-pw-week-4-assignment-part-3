@@ -8,9 +8,13 @@ console.log(`Basket is ${basket}`);
 
 //Create a function called addItem. It should:
 function addItem( string ){ //take an input parameter for a string item
+  // EDIT Adding conditions for stretch goal
   console.log('in addItem');
-  basket.push(string); //add the new item to the global array basket.
-  return true; //return true indicating the item was added
+  if (isFull(basket) === false) {
+    basket.push(string); //add the new item to the global array basket.
+    return true; //return true indicating the item was added
+  }
+  return false;
 }
 
 console.log('adding iPad - should say true', addItem('iPad'));
