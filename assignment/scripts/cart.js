@@ -4,11 +4,11 @@ console.log('***** Cart Functions *****');
 
 // Create a global variable named basket and set it to an empty array.
 let basket = [];
-console.log(`Basket is ${basket}`);
+console.log(`Basket is empty ${basket}`);
 const maxItems = 5;
 console.log(`Basket capacity is ${maxItems}`); //from stretch goals
 
-function isFull( array ) {
+function isFull( array ) { // from stretch goals
   console.log('in isFull');
   if(array.length < maxItems){
     console.log(`${array} has room`);
@@ -17,6 +17,8 @@ function isFull( array ) {
   console.log(`${array} is full`);
   return true; //return true otherwise (equal or more than maxItems)
 } //end isFull
+
+console.log(`testing isFull - should say false ${isFull(basket)}`);
 
 //Create a function called addItem. It should:
 function addItem( string ){ //take an input parameter for a string item
@@ -30,7 +32,6 @@ function addItem( string ){ //take an input parameter for a string item
     return true; //return true indicating the item was added
   }
 }
-
 
 console.log('adding iPad - should say true', addItem('iPad'));
 console.log(`Basket is now: ${basket}`);
@@ -50,6 +51,8 @@ function listItems( array ){
   return 'currently in cart';
 }
 
+console.log(`showing ${listItems(basket)}`);
+
 // Create a function called empty. It should:
 function empty( array ){
   console.log('in empty');
@@ -58,8 +61,8 @@ function empty( array ){
 
   }
   return array; // reset the basket to an empty array
-}
-console.log(`Basket is now: ${basket}`);
+} // end empty
+// testing empty at bottom of code
 
 /* Stretch Goals
 Remember that Stretch Goals are not required, but will help you to further develop concepts from the skills we have covered.
@@ -74,6 +77,8 @@ Using functions in other functions!*/
   //Use the isFull function to prevent more than maxItems from being added to the basket.
   //If an item was added to the array, return true
   //If there was no room and the item could not be added return false
+/* see line 27 */
+
 console.log('testing isfull, should say false', isFull(basket));
 console.log('adding MBP - should say true', addItem('MBP'));
 console.log(`Basket is now: ${basket}`);
@@ -93,3 +98,6 @@ function removeItem( string ) { //Take an input parameter for a string item
 
 console.log('test - removing MBP', removeItem('MBP'));
 console.log('test - basket should not change, return null', removeItem('mouse'));
+
+console.log(`testing empty ${empty(basket)}`);
+console.log('Basket is now:', basket);
