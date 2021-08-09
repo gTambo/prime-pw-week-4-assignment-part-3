@@ -84,7 +84,7 @@ console.log('adding MBP - should say true', addItem('MBP'));
 console.log(`Basket is now: ${basket}`);
 console.log('testing isfull, should say true', isFull(basket));
 console.log('testing isFull, adding keyboard, should say false', addItem('keyboard'));
-
+console.log(`Basket is now: ${basket}`);
 // Using Array built-in functions!
 
 //Create a function called removeItem. It should:
